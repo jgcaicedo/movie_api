@@ -11,7 +11,12 @@ class MovieCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Image.network('https://image.tmdb.org/t/p/w200${movie.posterPath}'),
+      leading: movie.posterPath !="" ?Image.network(
+   
+     'https://image.tmdb.org/t/p/w200${movie.posterPath}' 
+    , // Imagen de marcador de posición
+)
+: Icon(Icons.movie),
       title: Text(movie.title),
       subtitle: Text(movie.releaseDate),
       onTap: () {

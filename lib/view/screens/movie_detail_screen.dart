@@ -17,7 +17,7 @@ class MovieDetailScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(width: 300,child: Image.network('https://image.tmdb.org/t/p/w500${movie.posterPath}')),
+              Container(width: 300,child:movie.posterPath !=""? Image.network('https://image.tmdb.org/t/p/w500${movie.posterPath}'): Container()),
               SizedBox(height: 10),
               Text('Fecha de Estreno: ${movie.releaseDate}'),
               SizedBox(height: 10),
